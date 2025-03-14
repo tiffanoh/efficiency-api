@@ -1,11 +1,14 @@
 const express = require('express');
 const router = express.Router();
-const { getPingResponse, getData } = require('../controllers/apiController');
+const { getPingResponse, getData, getDataById } = require('../controllers/apiController');
 
-// GET /ping
+// Define the /ping route
 router.get('/ping', getPingResponse);
 
-// GET /data
+// Define the /data route
 router.get('/data', getData);
+
+// Define the /data/:id route for getting specific data by ID
+router.get('/data/:id', getDataById);
 
 module.exports = router;
